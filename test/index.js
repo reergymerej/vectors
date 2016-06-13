@@ -84,20 +84,11 @@ describe('dotProduct', () => {
   });
 });
 
-xdescribe('crossProduct', () => {
-  it('a × b = |a| |b| sin(θ) n', () => {
-    // |a| is the magnitude (length) of vector a
-    // |b| is the magnitude (length) of vector b
-    // θ is the angle between a and b
-    // n is the unit vector at right angles to both a and b
-
-
-    const ax = 9, ay = 3;
-    const bx = 4, by = 5;
-    const a = factory(ax, ay);
-    const b = factory(bx, by);
-
-    const result = a.crossProduct(b);
-    expect(result).to.equal(ax * bx + ay * by);
+describe('crossProduct', () => {
+  it('should throw for 2d vectors', () => {
+    const a = factory(1, 1);
+    const b = factory(1, 1);
+    const fn = () => a.crossProduct(b);
+    expect(fn).to.throw('2d');
   });
 });

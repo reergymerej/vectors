@@ -61,6 +61,10 @@ class Vector {
     const y = this.y * vector.y;
     return x + y;
   }
+
+  crossProduct() {
+    err('cross product is not available for 2d vectors');
+  }
 }
 
 
