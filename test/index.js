@@ -1,3 +1,6 @@
+import { expect } from 'chai';
+import Vector from '../src';
+
 function factory(x, y) {
   return new Vector(x, y);
 }
@@ -89,4 +92,3 @@ describe('crossProduct', () => {
     expect(fn).to.throw('2d');
   });
 });
-
