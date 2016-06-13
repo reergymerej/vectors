@@ -92,3 +92,17 @@ describe('crossProduct', () => {
     expect(fn).to.throw('2d');
   });
 });
+
+
+const vector = new Vector(3, 4);
+
+console.log(vector.x);
+console.log(vector.y);
+console.log(vector.magnitude);
+console.log(vector.length);
+console.log(vector.unit);
+
+console.log(vector.add(new Vector(5, 6)));
+console.log(vector.subtract(new Vector(5, 6)));
+console.log(vector.multiply(new Vector(5, 6)));
+console.log(vector.dotProduct(new Vector(5, 6)));
