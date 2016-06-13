@@ -32,6 +32,12 @@ class Vector {
     const y = this.y + vector.y;
     return new Vector(x, y);
   }
+
+  subtract(vector) {
+    const x = this.x - vector.x;
+    const y = this.y - vector.y;
+    return new Vector(x, y);
+  }
 }
 
 

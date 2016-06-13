@@ -36,3 +36,12 @@ describe('add', () => {
     expect(result.length).to.equal(factory(8, 10).length);
   });
 });
+
+describe('subtract', () => {
+  it('should return new vector', () => {
+    const a = factory(10, 10);
+    const b = factory(5, 7);
+    const result = a.subtract(b);
+    expect(result.length).to.equal(factory(5, 3).length);
+  });
+});
