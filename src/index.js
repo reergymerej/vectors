@@ -23,8 +23,12 @@ class Vector {
     }
   }
 
-  get length() {
+  get magnitude() {
     return pythag(this.x, this.y);
+  }
+
+  get length() {
+    return this.magnitude;
   }
 
   add(vector) {

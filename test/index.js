@@ -18,8 +18,15 @@ describe('Vector', () => {
     });
   });
 
-  describe('length', () => {
+  describe('magnitude', () => {
     it('should be available', () => {
+      const vector = factory(3, 9);
+      const result = vector.magnitude;
+      const expected = Math.sqrt(3 * 3 + 9 * 9);
+      expect(result).to.equal(expected);
+    });
+
+    it('should be available as length', () => {
       const vector = factory(3, 9);
       const result = vector.length;
       const expected = Math.sqrt(3 * 3 + 9 * 9);
