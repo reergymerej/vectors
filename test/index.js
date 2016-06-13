@@ -21,7 +21,7 @@ describe('Vector', () => {
   describe('length', () => {
     it('should be available', () => {
       const vector = factory(3, 9);
-      const result = vector.length();
+      const result = vector.length;
       const expected = Math.sqrt(3 * 3 + 9 * 9);
       expect(result).to.equal(expected);
     });
