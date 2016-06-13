@@ -61,3 +61,15 @@ describe('mutliply', () => {
     expect(result.length).to.equal(factory(50, 70).length);
   });
 });
+
+describe('dotProduct', () => {
+  it('should return a scalar', () => {
+    const ax = 2, ay = 3;
+    const bx = 4, by = 5;
+    const a = factory(ax, ay);
+    const b = factory(bx, by);
+    
+    const result = a.dotProduct(b);
+    expect(result).to.equal(ax * bx + ay * by);
+  });
+});
