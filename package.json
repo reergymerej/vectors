@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "vectors",
+  "name": "@reergymerej/vectors",
   "main": "lib/index.js",
   "scripts": {
     "start": "babel-node src/index.js",
