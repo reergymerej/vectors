@@ -62,14 +62,42 @@ describe('mutliply', () => {
   });
 });
 
+describe('unit', () => {
+  it('should scale the vector to a magnitude of 1', () => {
+    const ax = 2, ay = -4;
+    const a = factory(ax, ay);
+
+    const result = a.unit;
+    expect(result.length).to.closeTo(1, 0.1);
+  });
+});
+
 describe('dotProduct', () => {
   it('should return a scalar', () => {
-    const ax = 2, ay = 3;
+    const ax = 9, ay = 3;
     const bx = 4, by = 5;
     const a = factory(ax, ay);
     const b = factory(bx, by);
-    
+
     const result = a.dotProduct(b);
+    expect(result).to.equal(ax * bx + ay * by);
+  });
+});
+
+xdescribe('crossProduct', () => {
+  it('a × b = |a| |b| sin(θ) n', () => {
+    // |a| is the magnitude (length) of vector a
+    // |b| is the magnitude (length) of vector b
+    // θ is the angle between a and b
+    // n is the unit vector at right angles to both a and b
+
+
+    const ax = 9, ay = 3;
+    const bx = 4, by = 5;
+    const a = factory(ax, ay);
+    const b = factory(bx, by);
+
+    const result = a.crossProduct(b);
     expect(result).to.equal(ax * bx + ay * by);
   });
 });

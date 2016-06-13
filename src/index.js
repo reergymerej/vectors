@@ -31,6 +31,13 @@ class Vector {
     return this.magnitude;
   }
 
+  get unit() {
+    const x = this.x;
+    const y = this.y;
+    const magnitude = this.magnitude;
+    return new Vector(x / magnitude, y / magnitude);
+  }
+
   add(vector) {
     const x = this.x + vector.x;
     const y = this.y + vector.y;
