@@ -1,4 +1,7 @@
 # vectors  
+
+2d vectors for the whole family  
+
 v1.0.0 [![Build Status](https://travis-ci.org/reergymerej/vectors.svg?branch=master)](https://travis-ci.org/reergymerej/vectors)
 
 ## API  

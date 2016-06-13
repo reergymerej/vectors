@@ -20,5 +20,20 @@
   "license": "ISC",
   "directories": {
     "test": "test"
-  }
+  },
+  "description": "2d vectors for the whole family",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reergymerej/vectors.git"
+  },
+  "keywords": [
+    "2d",
+    "vector",
+    "vectors"
+  ],
+  "author": "Jeremy Greer",
+  "bugs": {
+    "url": "https://github.com/reergymerej/vectors/issues"
+  },
+  "homepage": "https://github.com/reergymerej/vectors#readme"
 }
