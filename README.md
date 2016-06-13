@@ -4,6 +4,14 @@
 
 v1.0.0 [![Build Status](https://travis-ci.org/reergymerej/vectors.svg?branch=master)](https://travis-ci.org/reergymerej/vectors)
 
+## Usage
+
+```js
+import Vector from 'vectors';
+const vector = new Vector(3, 4);
+console.log(vector.magnitude); // 5
+```
+
 ## API  
 
 ### Properties
