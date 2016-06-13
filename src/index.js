@@ -42,6 +42,12 @@ class Vector {
     const y = this.y - vector.y;
     return new Vector(x, y);
   }
+
+  multiply(vector) {
+    const x = this.x * vector.x;
+    const y = this.y * vector.y;
+    return new Vector(x, y);
+  }
 }
 
 
