@@ -27,3 +27,12 @@ describe('Vector', () => {
     });
   });
 });
+
+describe('add', () => {
+  it('should return new vector', () => {
+    const a = factory(3, 3);
+    const b = factory(5, 7);
+    const result = a.add(b);
+    expect(result.length).to.equal(factory(8, 10).length);
+  });
+});

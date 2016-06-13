@@ -26,6 +26,12 @@ class Vector {
   get length() {
     return pythag(this.x, this.y);
   }
+
+  add(vector) {
+    const x = this.x + vector.x;
+    const y = this.y + vector.y;
+    return new Vector(x, y);
+  }
 }
 
 
