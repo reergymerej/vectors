@@ -1,1 +1,9 @@
+*~
+.babelrc
+.eslintignore
+.eslintrc
+.travis.yml
+TODO.md
 src/
+test/
+yarn.lock
