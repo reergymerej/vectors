@@ -8,12 +8,12 @@ function pythag(x, y) {
 
 class Vector {
   constructor(x, y){
-    this.hasRequiredParams(x, y);
+    this.assertParams(x, y);
     this.x = x;
     this.y = y;
   }
 
-  hasRequiredParams(x, y) {
+  assertParams(x, y) {
     if (x === undefined) {
       err('missing x');
     }
@@ -32,40 +32,73 @@ class Vector {
   }
 
   get unit() {
-    const x = this.x;
-    const y = this.y;
-    const magnitude = this.magnitude;
-    return new Vector(x / magnitude, y / magnitude);
+    return unit(this)
   }
 
   add(vector) {
-    const x = this.x + vector.x;
-    const y = this.y + vector.y;
-    return new Vector(x, y);
+    return add(this, vector)
   }
 
   subtract(vector) {
-    const x = this.x - vector.x;
-    const y = this.y - vector.y;
-    return new Vector(x, y);
+    return subtract(this, vector)
   }
 
   multiply(vector) {
-    const x = this.x * vector.x;
-    const y = this.y * vector.y;
-    return new Vector(x, y);
+    return multiply(this, vector)
   }
 
   dotProduct(vector) {
-    const x = this.x * vector.x;
-    const y = this.y * vector.y;
-    return x + y;
+    return dotProduct(this, vector)
   }
 
   crossProduct() {
-    err('cross product is not available for 2d vectors');
+    return crossProduct()
   }
 }
 
+const operateOnField = (field) => (operation) => (a, b) =>
+  operation(a[field], b[field])
+
+const onX = operateOnField('x')
+const onY = operateOnField('y')
+
+const getXY = (operation) => (a, b) => {
+  return [
+    onX(operation)(a, b),
+    onY(operation)(a, b),
+  ]
+}
+
+const tupleToVector = ([x, y]) => new Vector(x, y)
+
+const _add = (a, b) => a + b
+const _subtract = (a, b) => a - b
+const _multiply = (a, b) => a * b
+
+const getVectorFromOperation = (operation) => (a, b) => {
+  return tupleToVector(
+    getXY(operation)(a, b)
+  )
+}
+
+export const add = getVectorFromOperation(_add)
+
+export const subtract = getVectorFromOperation(_subtract)
+
+export const multiply = getVectorFromOperation(_multiply)
+
+export const dotProduct = (a, b) => {
+    const [x, y] = getXY(_multiply)(a, b)
+    return _add(x, y)
+  }
+
+export const crossProduct = () => {
+  err('cross product is not available for 2d vectors');
+}
+
+export const unit = (vector) => {
+  const {x, y, magnitude} = vector
+  return new Vector(x / magnitude, y / magnitude);
+}
 
 export default Vector;
