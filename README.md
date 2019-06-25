@@ -57,7 +57,7 @@ vector.length;  // 5
 vector.unit;  // Vector { x: 0.6, y: 0.8 }
 ```
 
-### Methods
+### Methods/Functions
 
 The following examples use
 ```js
